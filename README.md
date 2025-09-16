@@ -44,9 +44,6 @@
 - `npm run preview` – Preview production build
 - `npm run deploy` – Deploy to GitHub Pages
 
-## Attributions
-
-See `Attributions.md` for third-party assets and libraries.
 
 ---
 
