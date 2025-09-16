@@ -1,7 +1,18 @@
-
 # Mobile AR Sketching App
 
-This is a web application that allows users to create sketches in an augmented reality environment. The project is built with React, TypeScript, and Vite.
+This project is a web application that enables users to create sketches in an augmented reality environment. The core behavior centers around interactively overlaying images on the camera view, allowing users to:
+
+- Move the overlay image by dragging (touch or mouse).
+- Scale the image using pinch gestures or mouse wheel.
+- Rotate the image via external controls.
+- Adjust the image opacity.
+- Lock the overlay to prevent further changes.
+
+These features are powered by the [`AROverlay`](src/components/AROverlay.tsx) component, which manages user interactions and image transformations in real time.
+
+The app is built with React, TypeScript, and Vite, and uses Radix UI and Tailwind CSS for its component library and styling.
+
+...
 
 ## Features
 
