@@ -29,10 +29,23 @@ export function AROverlay({ imageUrl, opacity, isLocked, onTransformChange }: AR
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Reset and center the image when the imageUrl changes
+    if (overlayRef.current) {
+      const { clientWidth, clientHeight } = overlayRef.current;
+      setTransform({
+        x: clientWidth / 2,
+        y: clientHeight / 2,
+        scale: 1,
+        rotation: 0,
+      });
+    }
+  }, [imageUrl]);
+
+  useEffect(() => {
     onTransformChange?.(transform);
   }, [transform, onTransformChange]);
 
-  const getDistance = (touch1: Touch, touch2: Touch) => {
+  const getDistance = (touch1: React.Touch, touch2: React.Touch) => {
     const dx = touch1.clientX - touch2.clientX;
     const dy = touch1.clientY - touch2.clientY;
     return Math.sqrt(dx * dx + dy * dy);
